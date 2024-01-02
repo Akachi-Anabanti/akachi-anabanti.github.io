@@ -59,3 +59,43 @@ async function convertToPDF(e) {
 
   html2pdf().from(content).set(options).save();
 }
+
+function validateForm(e) {
+    var form = document.getElementById('my-form');
+    
+    if (!form.checkValidity()) {
+        // The form is not valid, prevent submission
+        e.preventDefault();
+        e.stopPropagation();
+        
+        // Set custom validation messages
+        if (!form.name.value) {
+            form.name.setCustomValidity('Name cannot be left blank');
+        } else {
+            form.name.setCustomValidity('');
+        }
+        
+         if (!form.email.value) {
+            form.email.setCustomValidity('Email cannot be left blank');
+        } else if (form.email.validity.typeMismatch) {
+            form.email.setCustomValidity('Please enter a valid email address');
+        } else {
+            form.email.setCustomValidity('');
+        }
+        if (!form.subject.value) {
+            form.subject.setCustomValidity('Subject cannot be left blank');
+        } else {
+            form.subject.setCustomValidity('');
+        }
+        if (!form.message.value) {
+            form.message.setCustomValidity('Message cannot be left blank');
+        } else {
+            form.message.setCustomValidity('');
+        }
+        // Report validity to show the validation messages
+        form.reportValidity();
+    } else {
+        // The form is valid, submit it
+        form.submit();
+    }
+}
