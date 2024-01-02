@@ -322,6 +322,7 @@
           <div class="contact-content-con">
             <div class="left-contact">
               <h4>Contact me here</h4>
+	      <hr>
               <p>
                 Lorem ipsum dolor sit, amet consectetur adipisicing elit. Est
                 ducimus eligendi blanditiis dolore
@@ -368,18 +369,19 @@
               </div>
             </div>
             <div class="right-contact">
-              <form action="" class="contact-form">
+              <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
                 <div class="input-control i-c-2">
+		<input type="hidden" name="access_key" value="fb0c9c0a-61fa-4827-8f37-d95019c2c706">
                   <input
                     type="text"
-                    name=""
+                    name="name"
                     id=""
                     placeholder="YOUR NAME"
                     required
                   />
                   <input
                     type="email"
-                    name=""
+                    name="email"
                     id=""
                     placeholder="YOUR EMAIL"
                     required
@@ -388,26 +390,29 @@
                 <div class="input-control">
                   <input
                     type="text"
-                    name=""
+                    name="subject"
                     id=""
                     placeholder="ENTER SUBJECT"
+		    required
                   />
                 </div>
                 <div class="input-control">
                   <textarea
-                    name=""
+                    name="message"
                     id=""
                     cols="15"
                     rows="8"
                     placeholder="Message here"
+		    required
                   ></textarea>
                 </div>
+		<input type="hidden" name="redirect" value="https://web3forms.com/success">
                 <div class="submit-btn">
                   <div class="btn-con">
                     <a href="" class="main-btn">
-                      <span class="btn-text"> Download Cv </span>
+                      <span class="btn-text"> Submit </span>
                       <span class="btn-icon"
-                        ><i class="fas fa-download"></i
+                        ><i class="fas fa-paper-plane"></i
                       ></span>
                     </a>
                   </div>
